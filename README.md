@@ -74,7 +74,7 @@ docker images -a
 ## dockerfile
 
 ```yaml
-FROM dmh2000/ubuntu-base
+FROM username/ubuntu-base
 
 # working directory
 WORKDIR /app
