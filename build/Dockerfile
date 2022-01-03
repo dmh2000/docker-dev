@@ -1,4 +1,4 @@
-FROM dmh2000/ubuntu-gpp
+FROM username/ubuntu-gpp
 
 # working directory
 WORKDIR /app

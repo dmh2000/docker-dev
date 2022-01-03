@@ -12,7 +12,7 @@ Do the following in a clean new directory
 
 ### Dockerfile
 
-NOTE: tag names such as dhoward/ubuntu-base are arbitrary
+NOTE: tag names such as username/ubuntu-base are arbitrary
 
 ```yaml
 FROM ubuntu:20.04
@@ -37,10 +37,10 @@ file. For best results go ahead and compress the tar vile
 
 ```bash
 # build the base
-docker build -t dhoward/ubuntu-gpp
+docker build -t username/ubuntu-gpp
 
 # export it to a tar file and save it somewhere
-docker save -o gpp-base.tar dhoward/ubuntu-gpp
+docker save -o gpp-base.tar username/ubuntu-gpp
 
 # zip it up (output is gpp-base.tar.gz)
 gzip gpp-base.tar
@@ -66,7 +66,7 @@ docker images -a
 
 # should show something like this
 # REPOSITORY           TAG       IMAGE ID       CREATED       SIZE
-# dhoward/ubuntu-gpp   latest    ebf49abca245   3 hours ago   344MB
+# username/ubuntu-gpp   latest    ebf49abca245   3 hours ago   344MB
 ```
 
 # Build the dev image
@@ -114,7 +114,7 @@ cd build
 docker images -a
 
 # build the dev image
-docker build -t dhoward/build-dev
+docker build -t username/build-dev
 ```
 
 # Run the dev image to build the application
@@ -135,12 +135,11 @@ cp hello.cpp output
 # -ti makes it interactive
 # --rm removes the container after the run
 # -v binds the local directory to the container directory
-docker run -ti --rm -v $PWD/output:/app/output dhoward/build-dev
+docker run -ti --rm -v $PWD/output:/app/output username/build-dev
 
 # confirm the build worked
 ls -l output
 output/hello
-
 ```
 
 # Cleanup commands
